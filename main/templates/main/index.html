@@ -1,10 +1,57 @@
-{% extends 'main/base.html' %}
-
-{% block title %}
-Главная страница
-{% endblock %}
-
-{% block content %}
-    <h1>Главная страница</h1>
-    <p>Какой-то текст</p>
-{% endblock %}
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Цифровая библиотека</title>
+            <link  href="{% static 'main/style.css' %}" rel="stylesheet">
+        </head>
+        <body>
+            <div class= "krug">
+             <div id="elipse1"></div>  
+             <div id="elipse2"></div>
+             <div id="elipse3"></div>
+             <div id="elipse6"></div>
+             <div id="elipse7"></div>
+             <div id="elipse8"></div>
+             <div id="elipse10"></div>
+            </div>
+            <div class= "zagolovki">
+                 <span class= "zagolovok1">
+               цифровая 
+                </span>
+                 <span class= "zagolovok2">
+               библиотека
+                </span>
+                 <span class= "txt1">
+               Цифровая библиотека – собрание, в котором все материалы 
+            сохраняются в цифровом формате и доступны для работы с компьютера.
+                </span>
+                <div class = "button1_2">
+                
+                <a href="{% url 'login' %}" class="button2"></a>
+                <a href="#" class="button3"></a>
+                 <span class="vh2">
+                   Вход
+                </span>
+                     <span class="reg">
+                Регистрация 
+                </span>
+            </div>
+           </div>
+             <div class= "img">
+            <img src= "{% static 'main/img.png' %}" alt="" width="1128" height="812">
+            </div>
+            <div class= "inst">
+            <img src= "inst.png" >
+            </div>
+            <div class= "vk">
+            <img src= "vk.png" >
+            </div>
+            <div class= "tel">
+            <img src= "tel.png" >
+            </div>
+        </body>
+    </html>
+</html>
