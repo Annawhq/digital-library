@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Дисциплины
+{% endblock %}
+
+{% block content %}
+    <h1>Список дисциплин</h1>
+    <table>
+        {% for dis in discip %}
+        <tr><td>{{ dis.discip }}</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
