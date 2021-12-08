@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
 from main.forms import LoginUserForm
-from main.models import Disciplines, UserDiscipline
+from main.models import Disciplines, UserDiscipline, Books
 
 
 def index(request):
@@ -30,15 +30,10 @@ def disciplines(request):
     discip = UserDiscipline.objects.filter(user=userid)
     return render(request, 'main/disciplines.html', {"discip": discip})
 
-#class RegisterUser(CreateView):
-    #form_class = RegisterUserForm
-    #template_name = 'main/register.html'
-    #success_url = reverse_lazy('contacts')
 
-    #def form_valid(self, form):
-        #user = form.save()
-        #login(self.request, user)
-        #return redirect('contacts')
+def books(request):
+    book = Books.objects.all()
+    return render(request, 'main/books.html', {"books": book})
 
 
 class LoginUser(LoginView):
