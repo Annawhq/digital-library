@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Список книг</h1>
-    <table>
-        {% for book in books %}
-        <tr><td>{{ book.name }}</td><td>{{ book.author }}</td><td>{{ book.nomer }}</td></tr>
-        {% endfor %}
-    </table>
+{% for b in book %}
+    <h1>{{ b.name }}</h1>
+
+{% endfor %}
 {% endblock %}

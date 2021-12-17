@@ -14,6 +14,7 @@ class Books(models.Model):
     name = models.CharField(max_length=200)
     author = models.CharField(max_length=200, default='')
     nomer = models.CharField(max_length=17, default='')
+    link = models.URLField(default='')
     discipline = models.ForeignKey(Disciplines, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -1,7 +1,7 @@
 from django.contrib.auth import logout, login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
 
@@ -31,9 +31,9 @@ def disciplines(request):
     return render(request, 'main/disciplines.html', {"discip": discip})
 
 
-def books(request):
-    book = Books.objects.all()
-    return render(request, 'main/books.html', {"books": book})
+def books(request, pk):
+    book = Books.objects.filter(discipline=pk)
+    return render(request, 'main/books.html', {"book": book})
 
 
 class LoginUser(LoginView):
