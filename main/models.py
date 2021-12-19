@@ -6,6 +6,9 @@ from django.db import models
 class Disciplines(models.Model):
     name = models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name_plural = 'Disciplines'
+
     def __str__(self):
         return self.name
 
@@ -16,6 +19,9 @@ class Books(models.Model):
     nomer = models.CharField(max_length=17, default='')
     link = models.URLField(default='')
     discipline = models.ForeignKey(Disciplines, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Books'
 
     def __str__(self):
         return self.name
