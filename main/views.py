@@ -58,11 +58,13 @@ def search_results(request):
         )
     return render(request, 'main/search_results.html', {'object_list': object_list})
 
-#class SearchResultsView(ListView):
-    #model = Disciplines
-    #template_name = 'main/search_results.html'
 
-    #def get_queryset(self):
-        #query = self.request.GET.get('q')
-        #object_list = Disciplines.objects.filter(name__icontains=query)
-        #return object_list
+def search_book(request):
+    pk = request.META.get('HTTP_REFERER')
+    pkk = pk.split('/')
+    pkkk = pkk[-2]
+    query = request.GET.get('q')
+    object_list = Books.objects.filter(
+        Q(discipline=pkkk) & Q(name__icontains=query)
+    )
+    return render(request, 'main/search_book.html', {'object_list': object_list})
