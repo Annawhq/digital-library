@@ -18,14 +18,6 @@ def index(request):
     return render(request, 'main/index.html')
 
 
-def about(request):
-    return render(request, 'main/about.html')
-
-
-def contacts(request):
-    return render(request, 'main/contacts.html')
-
-
 def disciplines(request):
     userid = request.user.id
     discip = UserDiscipline.objects.filter(user=userid)
